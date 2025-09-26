@@ -32,6 +32,72 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
+<style>
+	/* 변경: 컨테이너 폭 지정(0폭 방지) */
+	.project-carousel {
+		position: relative;
+		display: block;      /* inline-block → block */
+		width: 100%;
+		max-width: 500px;    /* 이미지 최대 너비와 일치 */
+		line-height: 0;
+		overflow: visible;
+	}
+
+
+	/* 이미지 표시 영역(고정 높이로 겹쳐놓고 페이드 전환) */
+	.project-carousel .pc-viewport {
+		position: relative;
+		width: 100%;
+		max-width: 500px;
+		height: 300px; /* 이미지 최대 높이에 맞춤 */
+	}
+
+	.project-carousel .pc-slide {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .28s ease-in-out, visibility .28s ease-in-out;
+		border-radius: 6px;
+	}
+	.project-carousel .pc-slide.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* 화살표: 더 크게, 이미지와 간격 확대 */
+	.project-carousel .pc-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: transparent;
+		border: none;
+		padding: 6px 10px;
+		font-size: 36px;  /* 크기 확대 */
+		line-height: 1;
+		color: #111;
+		cursor: pointer;
+		user-select: none;
+		z-index: 2;
+	}
+	.project-carousel .pc-prev { left: -64px; } /* 이미지와 간격 확보 */
+	.project-carousel .pc-next { right: -64px; }
+
+	.project-carousel .pc-nav[disabled] { display: none; }
+
+	.project-carousel .pc-nav:focus { outline: 2px solid #e5e7eb; outline-offset: 2px; }
+	.project-carousel .pc-nav:hover { transform: translateY(-50%) scale(1.08); }
+
+	@media (max-width: 540px) {
+		.project-carousel .pc-prev { left: -44px; }
+		.project-carousel .pc-next { right: -44px; }
+		.project-carousel .pc-nav { font-size: 20px; }
+	}
+</style>
+
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -164,7 +230,17 @@
 							<h2 id="projects-section" class="heading">Projects</h2>
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
-									<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2" />
+									<div class="project-carousel">
+										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>
+
+										<div class="pc-viewport">
+											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
+											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+										</div>
+
+										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
+									</div>
 									<br />
 									<br />
 
@@ -547,6 +623,38 @@
 		const years = currentYear - baseYear + 1;
 
 		document.getElementById('experience-count').textContent = years;
+
+		(function () {
+			var carousel = document.querySelector('.project-carousel');
+			var slides   = carousel.querySelectorAll('.pc-slide');
+			var prevBtn  = carousel.querySelector('.pc-prev');
+			var nextBtn  = carousel.querySelector('.pc-next');
+
+			var index = 0;
+
+			function update() {
+				for (var i = 0; i < slides.length; i++) {
+					if (i === index) {
+						slides[i].classList.add('is-active');
+						slides[i].setAttribute('aria-hidden', 'false');
+					} else {
+						slides[i].classList.remove('is-active');
+						slides[i].setAttribute('aria-hidden', 'true');
+					}
+				}
+				prevBtn.disabled = index === 0;
+				nextBtn.disabled = index === slides.length - 1;
+			}
+
+			prevBtn.addEventListener('click', function () {
+				if (index > 0) { index -= 1; update(); }
+			});
+			nextBtn.addEventListener('click', function () {
+				if (index < slides.length - 1) { index += 1; update(); }
+			});
+
+			update();
+		})();
 	</script>
 
 
