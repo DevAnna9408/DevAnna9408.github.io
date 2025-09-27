@@ -96,6 +96,12 @@
 		.project-carousel .pc-next { right: -44px; }
 		.project-carousel .pc-nav { font-size: 20px; }
 	}
+
+	/* 텍스트/이미지 드래그 방지(보조) */
+  html, body, img { user-select: none; -webkit-user-drag: none; }
+  /* iOS 길게누름 콜아웃 억제(보조) */
+  html, body { -webkit-touch-callout: none; }
+
 </style>
 
 
@@ -231,15 +237,16 @@
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
 									<div class="project-carousel">
-										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>
+										<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2" />
+										<!--										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>-->
+<!---->
+<!--										<div class="pc-viewport">-->
+<!--											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />-->
+<!--											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />-->
+<!--											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />-->
+<!--										</div>-->
 
-										<div class="pc-viewport">
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
-										</div>
-
-										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
+<!--										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>-->
 									</div>
 									<br />
 									<br />
@@ -618,43 +625,48 @@
 	<script src="js/scrollax.min.js"></script>
 	<script src="js/main.js"></script>
 	<script>
-		const baseYear = 2022;
-		const currentYear = new Date().getFullYear();
-		const years = currentYear - baseYear + 1;
+		// 문서 전역 우클릭 비활성화
+ document.addEventListener('contextmenu', function (e) {
+   e.preventDefault();
+ }, { capture: true });
 
-		document.getElementById('experience-count').textContent = years;
+       const baseYear = 2022;
+       const currentYear = new Date().getFullYear();
+       const years = currentYear - baseYear + 1;
 
-		(function () {
-			var carousel = document.querySelector('.project-carousel');
-			var slides   = carousel.querySelectorAll('.pc-slide');
-			var prevBtn  = carousel.querySelector('.pc-prev');
-			var nextBtn  = carousel.querySelector('.pc-next');
+       document.getElementById('experience-count').textContent = years;
 
-			var index = 0;
+<!--       (function () {-->
+<!--           var carousel = document.querySelector('.project-carousel');-->
+<!--           var slides   = carousel.querySelectorAll('.pc-slide');-->
+<!--           var prevBtn  = carousel.querySelector('.pc-prev');-->
+<!--           var nextBtn  = carousel.querySelector('.pc-next');-->
 
-			function update() {
-				for (var i = 0; i < slides.length; i++) {
-					if (i === index) {
-						slides[i].classList.add('is-active');
-						slides[i].setAttribute('aria-hidden', 'false');
-					} else {
-						slides[i].classList.remove('is-active');
-						slides[i].setAttribute('aria-hidden', 'true');
-					}
-				}
-				prevBtn.disabled = index === 0;
-				nextBtn.disabled = index === slides.length - 1;
-			}
+<!--           var index = 0;-->
 
-			prevBtn.addEventListener('click', function () {
-				if (index > 0) { index -= 1; update(); }
-			});
-			nextBtn.addEventListener('click', function () {
-				if (index < slides.length - 1) { index += 1; update(); }
-			});
+<!--           function update() {-->
+<!--               for (var i = 0; i < slides.length; i++) {-->
+<!--                   if (i === index) {-->
+<!--                       slides[i].classList.add('is-active');-->
+<!--                       slides[i].setAttribute('aria-hidden', 'false');-->
+<!--                   } else {-->
+<!--                       slides[i].classList.remove('is-active');-->
+<!--                       slides[i].setAttribute('aria-hidden', 'true');-->
+<!--                   }-->
+<!--               }-->
+<!--               prevBtn.disabled = index === 0;-->
+<!--               nextBtn.disabled = index === slides.length - 1;-->
+<!--           }-->
 
-			update();
-		})();
+<!--           prevBtn.addEventListener('click', function () {-->
+<!--               if (index > 0) { index -= 1; update(); }-->
+<!--           });-->
+<!--           nextBtn.addEventListener('click', function () {-->
+<!--               if (index < slides.length - 1) { index += 1; update(); }-->
+<!--           });-->
+
+<!--           update();-->
+<!--       })();-->
 	</script>
 
 
