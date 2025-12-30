@@ -230,27 +230,28 @@
 							<h2 id="projects-section" class="heading">Projects</h2>
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
+									<div class="d-flex">
+										<h2>[B2B] Y대학교 지원자 평가 시스템</h2>
+									</div>
 									<div class="project-carousel">
 										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>
 
 										<div class="pc-viewport">
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
-											<img src="images/project_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+											<img src="images/eval_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
+											<img src="images/eval_2.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+											<img src="images/eval_3.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+											<img src="images/eval_4.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
 										</div>
 
 										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
 									</div>
 									<br />
-									<br />
-
-									<div class="d-flex">
-										<h2>[B2B] Y대학교 지원자 평가 시스템</h2>
-									</div>
 									<span class="date">2021.07-2021.12</span>
 									<span class="position">(주)에이펙스소프트</span>
 									<div> <b class="text-dark">담당 업무 : </b>업무분석, 유스케이스 작성, 화면 설계, FE/BE, 운영 및 유지보수
 									<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트
+										<br />
+										<br />
 										<details>
 											<summary style="font-size: 1rem; font-weight: bold; cursor: pointer; color: #000000">
 												설계 과정도 간략히 보기
@@ -264,20 +265,28 @@
 									</div>
 										<br />
 										<div>
-											<div><b class="text-dark">시스템 개요</b></div>
+											<div><b class="text-dark">> 시스템 개요</b></div>
 											<div>Domain Driven 설계 기반 서버 아키텍처로 안정성과 확장성을 확보한 시스템</div>
 											<div>(주)에이펙스소프트 Applynow 원서접수 시스템에서 지원자 데이터 추출·검증·변환</div>
 											<div>변환된 데이터를 활용한 지원자 평가 프로세스 운영</div>
 											<div>AWS S3를 통한 평가 문서 CRUD 관리</div>
 											<br />
 
-											<div><b class="text-dark">주요 기능</b></div>
+											<div><b class="text-dark">> 사용자 흐름</b></div>
+											<div>(1) 개별 평가위원의 지원자 내용 조회 및 평가</div>
+											<div>(2) 평가 관리자의 평가 내용 취합 및 결과 문서 생성</div>
+											<div>(3) 생성된 평가 결과 문서를 바탕으로 각 학교에서 합격자 공지 등</div>
+											<div>(4) 입학 담당자는 평가 진행 상황을 모니터링 하며 평가 운영</div>
+											<div>(5) 시스템 담당자는 학교 요청에 따라 필요한 로그 등 제공</div>
+											<br />
+
+											<div><b class="text-dark">> 주요 기능</b></div>
 											<div>■ S3 스토리지를 활용해 제출 파일을 PDF로 조회하며 평가 진행</div>
-											<div>■ 평가 결과를 Apache POI로 엑셀 업/다운로드, BIRT 모듈로 PDF 결과표 제공</div>
+											<div>■ 평가 내용을 Apache POI로 엑셀 업/다운로드, 평가 결과를 BIRT 모듈로 PDF 결과표 제공</div>
 											<div>■ SES 기반 메일링 서비스로 비밀번호 분실·알림 등 주요 메시지 자동 발송</div>
 											<br />
 
-											<div><b class="text-dark">서지로 평가 및 관리되던 연세대학교의 평가 업무를 시스템으로 전환 한 성과</b></div>
+											<div><b class="text-dark">> 서지로 평가 및 관리되던 연세대학교의 평가 업무를 시스템으로 전환 한 성과</b></div>
 											<div>1. 시간·장소 제약 없는 온라인 평가 환경 제공<br />
 												- 평가자가 각자의 일정에 맞춰 유연하게 참여할 수 있는 환경 제공</div>
 											<div>2. 입학담당자 권한으로 평가 진행 상황 실시간 모니터링 가능<br />
@@ -291,13 +300,66 @@
 						</div>
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
-									<img src="images/project_6.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2" />
+									<div class="d-flex">
+										<h2>[B2B / Platform] Applynow 지원자 평가 시스템</h2>
+									</div>
+									<span class="date">2023.07 - 2023.12(개발)</span>
 									<br />
-									<br />
+									<span class="date">2023.12 - 유지보수 및 운영</span>
+									<span class="position">(주)에이펙스소프트</span>
+									<div> <b class="text-dark">담당 업무 : </b>업무분석, DB 재설계, 화면 및 API 재설계, 레거시 코드 리팩토링 및 MSA 서비스 연결, FE / BE, 운영 및 유지보수
+										<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트 </div>
+										<br />
+										<div>
+											<div><b class="text-dark">> 시스템 개요</b></div>
+											<div>Y대학교 전용 지원자 평가 시스템을 다수 고객이 활용 가능한 멀티 B2B 환경으로 리팩토링 및 마이그레이션</div>
+											<div>단일 B2B 서비스를 Recursive DB 및 화면 설계 기반으로 리팩토링하여 유연하고 확장성 있는 플랫폼으로 전환</div>
+											<div>가능한 DB에 저장 된 값으로만 여러 로직을 분기해 실행 할 수 있는 구조로 DB 세팅</div>
+											<div>클라이언트(학교)별 프로세스에 따라 유동적으로 화면의 흐름 제어 / 분기 등</div>
+											<div>공통으로 사용 할 수 없거나 특정 클라이언트만 행할 수 있는 프로세스는 클라이언트 코드(PK)를 기준으로 로직 분기</div>
+											<br />
 
+											<div><b class="text-dark">> 시스템 관리자 흐름</b></div>
+											<div>&nbsp; - Y대학교 전용으로 개발되었던 평가 시스템과 사용자 시나리오는 같음</div>
+											<div>(1) 새로운 클라이언트(학교)의 평가 시스템 사용 요청</div>
+											<div>(2) 각 학교별 평가 프로세스 확인 후 데이터, 화면 등 세팅</div>
+											<div>(3) 테스트 서버 오픈 후 클라이언트와 수정 필요한 내용이나 추가 요구사항 도출</div>
+											<div>(4) 완료 후 운영(product) 서비스 오픈</div>
+											<br />
+
+											<div><b class="text-dark">주요 기능</b></div>
+											<div>■ 서로 다른 DB를 참조할 수 있는 멀티 데이터베이스 환경 구축</div>
+											<div>■ 서비스 레이어가 아닌 도메인 수준에서 요구사항을 처리할 수 있도록 DB 구조 재설계</div>
+											<div>■ Vue.js 컴포넌트 기반 개발 방식으로 화면 재구성</div>
+											<div>■ Zoom API 연동을 통한 비대면 면접 프로토타입 개발</div>
+											<br />
+
+											<div><b class="text-dark">단일 B2B 서비스에서 멀티 B2B 서비스로 전환한 성과</b></div>
+											<div>1. 새로운 클라이언트 추가 시 설계부터 진행하던 구축 비용과 시간을 절감<br />
+												- 신규 고객 요청이 발생해도 기존 구조를 활용해 빠르게 서비스 온보딩 가능</div>
+											<div>2. 공통 로직은 재사용하고 클라이언트별 차이점만 반영하여 개발 및 테스트 효율성 강화<br />
+												- 동일한 기능을 반복 구현할 필요가 없어 오류 가능성이 줄고 검증 과정이 간소화</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="resume-wrap d-flex ftco-animate">
+								<div class="text pl-3">
 									<div class="d-flex">
 										<h2>[Internal] 대학원 지원/평가정보 설정 시스템</h2>
 									</div>
+									<div class="project-carousel">
+										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>
+
+										<div class="pc-viewport">
+											<img src="images/project_6.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
+											<img src="images/setting_2.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+										</div>
+
+										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
+									</div>
+									<br />
 									<span class="date">2022.06-2022.12</span>
 									<span class="position">(주)에이펙스소프트</span>
 									<div>
@@ -315,7 +377,7 @@
 
 										<div><b class="text-dark">주요 기능</b></div>
 										<div>■ Recursive 데이터 CRUD를 위한 트리 구조 DB 설계 및 재귀 참조형 컴포넌트 구현</div>
-										<div>■ 단일 서비스에서 생성된 데이터를 API 기반으로 공유할 수 있도록 MSA 아키텍처 적용</div>
+										<div>■ 단일 서비스에서 생성된 데이터를 API 기반으로 공유할 수 있도록 MSA 아키텍처(Gateway) 적용</div>
 										<div>■ 사용자 정보를 단일 DB에서 관리하고 타 서비스와 연동 가능하도록 설계</div>
 										<div>■ 인증·권한 부여 서비스를 분리 구축하고, JWT 기반 토큰 인증 절차 유지</div>
 									</div>
@@ -333,51 +395,21 @@
 							</div>
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
-									<img src="images/project_7.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2" />
-									<div class="d-flex">
-										<h2>[B2B / Platform] Applynow 지원자 평가 시스템</h2>
-									</div>
-									<span class="date">2023.07 - 2023.12(개발)</span>
-									<br />
-									<span class="date">2023.12 - 유지보수 및 운영</span>
-									<span class="position">(주)에이펙스소프트</span>
-									<div> <b class="text-dark">담당 업무 : </b>업무분석, DB 재설계, 화면 및 API 재설계, 레거시 코드 리팩토링 및 MSA 서비스 연결, FE / BE, 운영 및 유지보수
-										<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트 </div>
-										<br />
-										<div>
-											<div><b class="text-dark">시스템 개요</b></div>
-											<div>단일 B2B 서비스를 Recursive DB 및 화면 설계 기반으로 리팩토링하여 유연하고 확장성 있는 플랫폼으로 전환</div>
-											<div>Y대학교 전용 지원자 평가 시스템을 다수 고객이 활용 가능한 멀티 B2B 환경으로 리팩토링 및 마이그레이션</div>
-											<br />
-
-											<div><b class="text-dark">주요 기능</b></div>
-											<div>■ 서로 다른 DB를 참조할 수 있는 멀티 데이터베이스 환경 구축</div>
-											<div>■ 서비스 레이어가 아닌 도메인 수준에서 요구사항을 처리할 수 있도록 DB 구조 재설계</div>
-											<div>■ Vue.js 컴포넌트 기반 개발 방식으로 화면 재구성</div>
-											<div>■ Zoom API 연동을 통한 비대면 면접 프로토타입 개발</div>
-											<br />
-
-											<div><b class="text-dark">단일 B2B 서비스에서 멀티 B2B 서비스로 전환한 성과</b></div>
-											<div>1. 새로운 클라이언트 추가 시 설계부터 진행하던 구축 비용과 시간을 절감<br />
-												- 신규 고객 요청이 발생해도 기존 구조를 활용해 빠르게 서비스 온보딩 가능</div>
-											<div>2. 공통 로직은 재사용하고 클라이언트별 차이점만 반영하여 개발 및 테스트 효율성 강화<br />
-												- 동일한 기능을 반복 구현할 필요가 없어 오류 가능성이 줄고 검증 과정이 간소화</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-							<div class="resume-wrap d-flex ftco-animate">
-								<div class="text pl-3">
-									<img src="images/project_3.jpg" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2" />
 									<div class="d-flex">
 										<h2>[SI] 이음아트플랫폼</h2>
 									</div>
+									<div class="project-carousel">
+										<button class="pc-nav pc-prev" type="button" aria-label="이전 이미지" title="이전 이미지"><</button>
+										<div class="pc-viewport">
+											<img src="images/project_3.jpg" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide is-active" />
+											<img src="images/art_1.png" alt="project-image" style="max-height: 300px; max-width: 500px" class="mb-2 pc-slide" />
+										</div>
+
+										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
+									</div>
 									<span class="date">2024.07 - 2025.02(개발 완료)</span>
 									<br />
-									<span class="date">2024.03 - 운영 및 유지보수(예정)</span>
+									<span class="date">2024.03 - 2026.01(SM)</span>
 									<span class="position">(주)에이펙스소프트/한국장애인문화예술원</span>
 									<div> <b class="text-dark">담당 업무 : </b>설계(화면, 유스케이스, DB 등), FE / BE, 운영 및 유지보수 일부
 										<div>
@@ -385,15 +417,23 @@
 											<br />
 
 											<div><b class="text-dark">시스템 개요</b></div>
-											<div>장애예술인도 웹 서비스를 활용할 수 있도록 웹접근성을 기반으로 설계된 플랫폼</div>
-											<div>웹 취약계층의 서비스 이용을 보장하기 위해 웹표준·접근성 지침을 준수한 설계 및 개발</div>
+											<div>장애예술인의 웹 서비스 이용을 보장하기 위해 웹표준·접근성 지침을 준수한 설계 및 개발</div>
+											<div>서비스 이용이 보다 용이하도록 주요 기능은 모바일 반응형으로 개발(창작물 바로 찍어 업로드 등)</div>
 											<div>장애예술인의 창작물(미술품, 공예품 등)을 온라인 갤러리에서 감상할 수 있는 UI/UX 제공</div>
 											<div>공공기관 운영 실적 관리 기능을 포함하여 행정·업무 시스템의 역할도 수행</div>
 											<br />
 
+											<div><b class="text-dark">> 사용자 흐름</b></div>
+											<div>(1) 장애예술인의 개인 포트폴리오/창작물 업로드</div>
+											<div>(2) 구매자는 플랫폼에서 원하는 창작물에 대해 구매 의사 표현</div>
+											<div>(3) 공공기관은 창작물 구매 내용이나 실적을 플랫폼에 업로드</div>
+											<div>(4) 관리자는 플랫폼 전반에 대한 문의사항 처리 및 기관의 실적 업로드 내용 확인</div>
+											<div>(5) 시스템 담당자는 기술적 문제나 예외 상황에 대한 대응</div>
+											<br />
+
 											<div><b class="text-dark">주요 기능</b></div>
 											<div>■ 장애예술인 창작물 업로드 및 개인 포트폴리오 작성</div>
-											<div>■ 오프라인 기획전 내용 메일링 서비스 및 참가신청</div>
+											<div>■ 오프라인 기획전 내용 메일링 서비스 및 참가신청/기획전 관리</div>
 											<div>■ 공공기관의 창작물 구매 실적 입력 제출 프로세스를 온라인으로 대체</div>
 											<div>■ 관리자의 플랫폼 이용 현황, 통계, 대시보드 등 관리메뉴 제공</div>
 											<br />
@@ -403,10 +443,9 @@
 												- 물리적 이동의 제약 없이 작품 등록과 정보 탐색이 가능해 활동 기회 확대</div>
 											<div>2. 기업·구매자가 장애예술인의 창작물을 쉽게 접할 수 있도록 온라인 접근 경로 확대<br />
 												- 기존 오프라인 전시 의존에서 벗어나 언제든지 작품을 감상·구매할 수 있는 채널 확보</div>
-
 										</div>
-
 									</div>
+									<br />
 									<details>
 										<summary style="font-size: 1rem; font-weight: bold; cursor: pointer; color: #000000">
 											CSR 과정도 간략히 보기
@@ -417,6 +456,7 @@
 											<img src="images/project_5.png" alt="project-image" style="max-width: 500px;" class="mb-2" />
 										</div>
 									</details>
+									<br />
 								</div>
 							</div>
 							<div id="page-3" class="page three">
@@ -618,42 +658,44 @@
 	<script src="js/scrollax.min.js"></script>
 	<script src="js/main.js"></script>
 	<script>
-		const baseYear = 2022;
-		const currentYear = new Date().getFullYear();
-		const years = currentYear - baseYear + 1;
-
-		document.getElementById('experience-count').textContent = years;
-
 		(function () {
-			var carousel = document.querySelector('.project-carousel');
-			var slides   = carousel.querySelectorAll('.pc-slide');
-			var prevBtn  = carousel.querySelector('.pc-prev');
-			var nextBtn  = carousel.querySelector('.pc-next');
+			var carousels = document.querySelectorAll('.project-carousel');
 
-			var index = 0;
+			for (var c = 0; c < carousels.length; c++) {
+				(function (carousel) {
+					var slides = carousel.querySelectorAll('.pc-slide');
+					var prevBtn = carousel.querySelector('.pc-prev');
+					var nextBtn = carousel.querySelector('.pc-next');
 
-			function update() {
-				for (var i = 0; i < slides.length; i++) {
-					if (i === index) {
-						slides[i].classList.add('is-active');
-						slides[i].setAttribute('aria-hidden', 'false');
-					} else {
-						slides[i].classList.remove('is-active');
-						slides[i].setAttribute('aria-hidden', 'true');
+					if (!slides.length || !prevBtn || !nextBtn) return;
+
+					var index = 0;
+
+					function update() {
+						for (var i = 0; i < slides.length; i++) {
+							if (i === index) {
+								slides[i].classList.add('is-active');
+								slides[i].setAttribute('aria-hidden', 'false');
+							} else {
+								slides[i].classList.remove('is-active');
+								slides[i].setAttribute('aria-hidden', 'true');
+							}
+						}
+						prevBtn.disabled = index === 0;
+						nextBtn.disabled = index === slides.length - 1;
 					}
-				}
-				prevBtn.disabled = index === 0;
-				nextBtn.disabled = index === slides.length - 1;
+
+					prevBtn.addEventListener('click', function () {
+						if (index > 0) { index -= 1; update(); }
+					});
+
+					nextBtn.addEventListener('click', function () {
+						if (index < slides.length - 1) { index += 1; update(); }
+					});
+
+					update();
+				})(carousels[c]);
 			}
-
-			prevBtn.addEventListener('click', function () {
-				if (index > 0) { index -= 1; update(); }
-			});
-			nextBtn.addEventListener('click', function () {
-				if (index < slides.length - 1) { index += 1; update(); }
-			});
-
-			update();
 		})();
 	</script>
 
