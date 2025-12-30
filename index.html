@@ -112,6 +112,12 @@
 		.project-carousel .pc-viewport { height: 220px; }
 		.project-carousel .pc-nav { font-size: 24px; }
 	}
+
+	/* 텍스트/이미지 드래그 방지(보조) */
+	html, body, img { user-select: none; -webkit-user-drag: none; }
+	/* iOS 길게누름 콜아웃 억제(보조) */
+	html, body { -webkit-touch-callout: none; }
+
 </style>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -273,8 +279,6 @@
 									<span class="date">2021.07-2021.12</span>
 									<div> <b class="text-dark">담당 업무 : </b>업무분석, 유스케이스 작성, 화면 설계, FE/BE, 운영 및 유지보수
 									<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트
-										<br />
-										<br />
 										<details>
 											<summary style="font-size: 1rem; font-weight: bold; cursor: pointer; color: #000000">
 												설계 과정도 간략히 보기
@@ -471,7 +475,6 @@
 												- 기존 오프라인 전시 의존에서 벗어나 언제든지 작품을 감상·구매할 수 있는 채널 확보</div>
 										</div>
 									</div>
-									<br />
 									<details>
 										<summary style="font-size: 1rem; font-weight: bold; cursor: pointer; color: #000000">
 											CSR 과정도 간략히 보기
