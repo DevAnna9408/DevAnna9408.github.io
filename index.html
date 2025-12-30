@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>FE/BE 웹 개발자 안상철 입니다</title>
-	<meta name="author" content="안상철">
-	<meta name="description" content="개발하고자 하는 내용을 직접 설계하는 것 만큼, 개발 한 내용을 직접 운영하는 것 만큼 좋은 개발은 없습니다. 안녕하세요, FE/BE 웹 개발자 안상철 입니다.">
-	<meta name="keywords" content="웹 개발, 웹 개발자, 웹 개발자 안상철, 안상철, 웹 개발자 안상철 포트폴리오, 안상철 포트폴리오, FE, BE, Vue.js, Spring Boot">
-
-	<meta property="og:title" content="안녕하세요, FE/BE 웹 개발자 안상철 입니다.">
-	<meta property="og:description" content="개발하고자 하는 내용을 직접 설계하는 것 만큼, 개발 한 내용을 직접 운영하는 것 만큼 좋은 개발은 없습니다. 안녕하세요, FE/BE 웹 개발자 안상철 입니다.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://devanna9408.github.io">
-	<meta property="og:image" content="https://devanna9408.github.io/images/profile.jpg">
-
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
@@ -33,23 +19,34 @@
 </head>
 
 <style>
-	/* 변경: 컨테이너 폭 지정(0폭 방지) */
-	.project-carousel {
-		position: relative;
-		display: block;      /* inline-block → block */
-		width: 100%;
-		max-width: 500px;    /* 이미지 최대 너비와 일치 */
-		line-height: 0;
-		overflow: visible;
+
+	.intro-wrap { width: 100%; min-width: 0; }
+	.intro-photo { flex-shrink: 0; margin-right: 20px; }
+	.intro-info { min-width: 0; }              /* flex 아이템 overflow 방지 핵심 */
+	.break-any { word-break: break-all; }      /* 이메일/전화가 길 때 줄바꿈 */
+
+	@media (max-width: 767.98px) {
+		.intro-photo { margin-right: 0; margin-bottom: 12px; }
 	}
 
+	/* 캐러셀: 반응형 안전 구성 */
+	.project-carousel {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;              /* 가운데 정렬 */
+		box-sizing: border-box;
+		overflow: visible;
+		line-height: normal;         /* 0 제거(부작용 방지) */
+		padding: 0 44px;             /* 버튼이 나갈 공간 확보 */
+	}
 
-	/* 이미지 표시 영역(고정 높이로 겹쳐놓고 페이드 전환) */
 	.project-carousel .pc-viewport {
 		position: relative;
 		width: 100%;
-		max-width: 500px;
-		height: 300px; /* 이미지 최대 높이에 맞춤 */
+		height: 300px;
+		line-height: 0;              /* 이미지 하단 여백 제거는 여기서 */
 	}
 
 	.project-carousel .pc-slide {
@@ -63,12 +60,12 @@
 		transition: opacity .28s ease-in-out, visibility .28s ease-in-out;
 		border-radius: 6px;
 	}
+
 	.project-carousel .pc-slide.is-active {
 		opacity: 1;
 		visibility: visible;
 	}
 
-	/* 화살표: 더 크게, 이미지와 간격 확대 */
 	.project-carousel .pc-nav {
 		position: absolute;
 		top: 50%;
@@ -76,28 +73,37 @@
 		background: transparent;
 		border: none;
 		padding: 6px 10px;
-		font-size: 36px;  /* 크기 확대 */
+		font-size: 36px;
 		line-height: 1;
 		color: #111;
 		cursor: pointer;
 		user-select: none;
 		z-index: 2;
 	}
-	.project-carousel .pc-prev { left: -64px; } /* 이미지와 간격 확보 */
-	.project-carousel .pc-next { right: -64px; }
 
+	/* 버튼을 컨테이너 "안쪽" 기준으로 배치(음수 오프셋 제거) */
+	.project-carousel .pc-prev { left: 0; }
+	.project-carousel .pc-next { right: 0; }
+
+	/* 이미지 1장일 때 버튼 숨김은 유지 */
 	.project-carousel .pc-nav[disabled] { display: none; }
 
-	.project-carousel .pc-nav:focus { outline: 2px solid #e5e7eb; outline-offset: 2px; }
-	.project-carousel .pc-nav:hover { transform: translateY(-50%) scale(1.08); }
+	.project-carousel .pc-nav:focus {
+		outline: 2px solid #e5e7eb;
+		outline-offset: 2px;
+	}
 
+	.project-carousel .pc-nav:hover {
+		transform: translateY(-50%) scale(1.08);
+	}
+
+	/* 모바일: 높이/버튼 크기 조정 */
 	@media (max-width: 540px) {
-		.project-carousel .pc-prev { left: -44px; }
-		.project-carousel .pc-next { right: -44px; }
-		.project-carousel .pc-nav { font-size: 20px; }
+		.project-carousel { padding: 0 34px; }
+		.project-carousel .pc-viewport { height: 220px; }
+		.project-carousel .pc-nav { font-size: 24px; }
 	}
 </style>
-
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -129,26 +135,30 @@
 							<p>개발 한 내용을 직접 운영하는 것 만큼 좋은 개발은 없습니다. </p>
 							<p>안녕하세요, FE/BE 웹 개발자 안상철 입니다.</p>
 
-							<div class="d-flex align-items-start mt-4 px-md-0 px-2">
-								<div style="flex-shrink: 0; margin-right: 20px;">
-									<img src="images/profile.jpg" alt="증명사진"
-										 style="width: 130px; height: auto; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" />
+							<div class="d-flex flex-column flex-md-row align-items-start mt-4 px-md-0 px-2 intro-wrap">
+								<div class="intro-photo">
+									<img
+											src="images/profile.jpg"
+											alt="증명사진"
+											style="width: 130px; height: auto; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"
+									/>
 								</div>
 
-								<ul class="about-info mb-0">
+								<ul class="about-info mb-0 intro-info">
 									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Name:</span> <span>안상철</span></li>
 									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Date of Birth:</span> <span>1994.08.03</span></li>
 									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Address:</span> <span>광주광역시 남구</span></li>
-									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Email:</span> <span>sysad83@naver.com</span></li>
-									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Phone:</span> <span>+82-10-2271-4282</span></li>
+									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Email:</span> <span class="break-any">sysad83@naver.com</span></li>
+									<li class="d-flex mb-2"><span class="mr-2 font-weight-bold">Phone:</span> <span class="break-any">+82-10-2271-4282</span></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+					<div class="counter-wrap ftco-animate d-flex">
 						<div class="text">
 							<p class="mb-4">
+								<span>21.07 ~</span>
 								<span class="number" id="experience-count">0</span>
 								<span>Years of Experience</span>
 							</p>
@@ -158,41 +168,38 @@
 			</div>
 		</div>
 	</section>
+<!--	<section class="ftco-section ftco-no-pb ftco-counter img" id="section-counter">-->
+<!--		<div class="container-fluid">-->
+<!--			<div class="row d-md-flex align-items-center">-->
+<!--				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">-->
+<!--					<div class="block-18 shadow">-->
+<!--						<div class="text">-->
+<!--							<strong class="number" id="happy-customers" data-number="95">0</strong>-->
+<!--							<span>End-to-End 기여도</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
+<!--				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">-->
+<!--					<div class="block-18 shadow">-->
+<!--						<div class="text">-->
+<!--							<strong class="number" id="customer-satisfaction" data-number="98">0</strong>-->
+<!--							<span>고객 만족도</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 
-	<section class="ftco-section ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container-fluid px-md-5">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" id="happy-customers" data-number="95">0</strong>
-							<span>End-to-End 기여도</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" id="customer-satisfaction" data-number="98">0</strong>
-							<span>고객 만족도</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="0">0</strong>
-							<span>서비스 이탈률</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
+<!--				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">-->
+<!--					<div class="block-18 shadow">-->
+<!--						<div class="text">-->
+<!--							<strong class="number" data-number="0">0</strong>-->
+<!--							<span>서비스 이탈률</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
 
 	<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
 		<div class="container">
@@ -207,7 +214,7 @@
 					</nav>
 				</div>
 				<div class="col-md-9" id="experience-section">
-					<div id="page-1" class="page two">
+					<div id="page-1" class="page one">
 						<h2 class="heading">Work Experience</h2>
 						<div class="resume-wrap d-flex ftco-animate">
 							<div class="text pl-3">
@@ -226,7 +233,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="page-2" class="page four">
+						<div id="page-2" class="page two">
 							<h2 id="projects-section" class="heading">Projects</h2>
 							<div class="resume-wrap d-flex ftco-animate">
 								<div class="text pl-3">
@@ -246,8 +253,9 @@
 										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
 									</div>
 									<br />
-									<span class="date">2021.07-2021.12</span>
 									<span class="position">(주)에이펙스소프트</span>
+									<br />
+									<span class="date">2021.07-2021.12</span>
 									<div> <b class="text-dark">담당 업무 : </b>업무분석, 유스케이스 작성, 화면 설계, FE/BE, 운영 및 유지보수
 									<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트
 										<br />
@@ -303,10 +311,11 @@
 									<div class="d-flex">
 										<h2>[B2B / Platform] Applynow 지원자 평가 시스템</h2>
 									</div>
+									<span class="position">(주)에이펙스소프트</span>
+									<br />
 									<span class="date">2023.07 - 2023.12(개발)</span>
 									<br />
 									<span class="date">2023.12 - 유지보수 및 운영</span>
-									<span class="position">(주)에이펙스소프트</span>
 									<div> <b class="text-dark">담당 업무 : </b>업무분석, DB 재설계, 화면 및 API 재설계, 레거시 코드 리팩토링 및 MSA 서비스 연결, FE / BE, 운영 및 유지보수
 										<div> <b class="text-dark">기술 스택 : </b>Vue.js(JS), Gradle & Spring Boot 기반 멀티모듈 프로젝트 </div>
 										<br />
@@ -360,8 +369,9 @@
 										<button class="pc-nav pc-next" type="button" aria-label="다음 이미지" title="다음 이미지">></button>
 									</div>
 									<br />
-									<span class="date">2022.06-2022.12</span>
 									<span class="position">(주)에이펙스소프트</span>
+									<br />
+									<span class="date">2022.06-2022.12</span>
 									<div>
 										<div><b class="text-dark">담당 업무 :</b> 화면·유스케이스 설계, DB 재설계, FE/BE 개발</div>
 										<div>초반 개발 참여 후 <b class="text-dark">평가시스템 부분</b> 담당 개발</div>
@@ -409,8 +419,9 @@
 									</div>
 									<span class="date">2024.07 - 2025.02(개발 완료)</span>
 									<br />
-									<span class="date">2024.03 - 2026.01(SM)</span>
 									<span class="position">(주)에이펙스소프트/한국장애인문화예술원</span>
+									<br />
+									<span class="date">2024.03 - 2026.01(SM)</span>
 									<div> <b class="text-dark">담당 업무 : </b>설계(화면, 유스케이스, DB 등), FE / BE, 운영 및 유지보수 일부
 										<div>
 											<div><b class="text-dark">기술 스택 :</b> Vue.js(JS/TS), Gradle & Spring Boot 기반 멀티모듈 프로젝트</div>
@@ -609,7 +620,7 @@
 						</div>
 						<div>
 							<h3 class="mb-4">Website</h3>
-							<p><a href="https://devanna9408.github.io">devanna9408</a></p>
+							<p><a>devanna9408</a></p>
 						</div>
 					</div>
 				</div>
@@ -661,6 +672,16 @@
 	<script src="js/scrollax.min.js"></script>
 	<script src="js/main.js"></script>
 	<script>
+
+		document.addEventListener('DOMContentLoaded', function () {
+			var baseYear = 2021; // 경력 시작 기준 연도로 맞추세요(예: 2021.07 시작이면 2021)
+			var currentYear = new Date().getFullYear();
+			var years = currentYear - baseYear;
+
+			var el = document.getElementById('experience-count');
+			if (el) el.textContent = String(years);
+		});
+
 		(function () {
 			var carousels = document.querySelectorAll('.project-carousel');
 
@@ -701,8 +722,5 @@
 			}
 		})();
 	</script>
-
-
 </body>
-
 </html>
